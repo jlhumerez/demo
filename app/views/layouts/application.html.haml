@@ -1,0 +1,36 @@
+!!!
+%html
+	%head
+		%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+		%title Probando
+		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= csrf_meta_tags
+	%body
+		%div.container
+			.nav-collapse.collapse
+				%ul.nav
+					%li.active
+						%a{:href => "#"}
+							Home
+					%li.dropdown
+						%a.dropdown-toggle{:href => "#", "role" => "button", "data-toggle" => "dropdown", "data-target" => "#"}
+							Dropdown
+							%b.caret
+						%ul.dropdown-menu{"role" => "menu"}
+							%li
+								%a{:href => "#link1"}
+									Dropdown #1
+							%li
+								%a{:href => "#link2"}
+									Dropdown #2
+							%li
+								%a{:href => "#link3"}
+									Dropdown #3
+							%li
+								%a{:href => "#link4"}
+									Dropdown #4
+						%li
+							%a{:href => "#contact"}
+								Contact
+			= yield
